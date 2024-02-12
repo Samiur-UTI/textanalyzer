@@ -55,8 +55,8 @@ const countSentences = async (req, res) => {
 
   try {
     const response = fileId
-      ? await wordCount(fileId, userId)
-      : await wordCount();
+      ? await sentenceCount(fileId, userId)
+      : await sentenceCount();
     res.status(200).json(response);
   } catch (error) {
     // Log the error for debugging purposes
