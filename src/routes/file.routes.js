@@ -19,7 +19,7 @@ router.get("/count-sentence", authenticateJWT, countSentences);
 router.get("/count-paragraph", authenticateJWT, countParagraph);
 
 router.get(
-  "/count-longest/:fileId",
+  "/count-longest",
   authenticateJWT,
   countLargestWordsInParagraphs
 );

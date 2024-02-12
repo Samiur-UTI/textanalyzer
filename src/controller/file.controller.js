@@ -77,8 +77,8 @@ const countParagraph = async (req, res) => {
 
   try {
     const response = fileId
-      ? await wordCount(fileId, userId)
-      : await wordCount();
+      ? await paragraphCount(fileId, userId)
+      : await paragraphCount();
     res.status(200).json(response);
   } catch (error) {
     // Log the error for debugging purposes
@@ -99,8 +99,8 @@ const countLargestWordsInParagraphs = async (req, res) => {
 
   try {
     const response = fileId
-      ? await wordCount(fileId, userId)
-      : await wordCount();
+      ? await largestWordsinParagraphs(fileId, userId)
+      : await largestWordsinParagraphs();
     res.status(200).json(response);
   } catch (error) {
     // Log the error for debugging purposes

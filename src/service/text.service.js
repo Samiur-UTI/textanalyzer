@@ -61,10 +61,13 @@ const sentenceCount = async (fileId) => {
 
 const paragraphCount = async (fileId) => {
     const data = fileId ? fs.readFileSync(`${defaultTextFilePath}${fileId}`, "utf-8") : fs.readFileSync(`${defaultTextFilePath}sample.txt`, "utf-8");
-    return data.split("\n").length
+    return data.split("\n").filter(d => d !== '' && d !== '.').length
 };
 
-const largestWordsinParagraphs = async (fileId) => {};
+const largestWordsinParagraphs = async (fileId) => {
+    const data = fileId ? fs.readFileSync(`${defaultTextFilePath}${fileId}`, "utf-8") : fs.readFileSync(`${defaultTextFilePath}sample.txt`, "utf-8");
+    const sanitizedData = data.split("\n").filter(d => d !== '' && d !== '.')
+};
 
 module.exports = {
   wordCount,
