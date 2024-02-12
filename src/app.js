@@ -2,6 +2,7 @@ require('dotenv').config();
 const sequelize = require('./config/database');
 const { User, Profile, FileInfo } = require('./model');
 const userRoutes = require("./routes/user.routes")
+const fileRoutes = require("./routes/file.routes")
 const express = require('express');
 if (process.env.NODE_ENV !== 'test') {
     sequelize.sync({ force: true })
@@ -15,6 +16,8 @@ app.use(express.json());
 
 // Use user routes
 app.use('/user', userRoutes);
+
+app.use('/file',fileRoutes)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
