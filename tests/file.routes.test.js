@@ -20,21 +20,29 @@ describe('File Routes', () => {
     // Test for /count-character route
     it('GET /count-character should return character count', async () => {
         // Similar to the above
+        const res = await request(app).get('/count-characterclea');
+        expect(res.statusCode).toEqual(200);
     });
 
     // Test for /count-sentence route
     it('GET /count-sentence should return sentence count', async () => {
         // Similar to the above
+        const res = await request(app).get('/count-sentence');
+        expect(res.statusCode).toEqual(200);
     });
 
     // Test for /count-paragraph route
     it('GET /count-paragraph should return paragraph count', async () => {
         // Similar to the above
+        const res = await request(app).get('/count-paragraph');
+        expect(res.statusCode).toEqual(200);
     });
 
     // Test for /count-longest route
     it('GET /count-longest should return largest words in paragraphs', async () => {
         // Similar to the above
+        const res = await request(app).get('/count-longest');
+        expect(res.statusCode).toEqual(200);
     });
 
     // // Test for /file-upload route
