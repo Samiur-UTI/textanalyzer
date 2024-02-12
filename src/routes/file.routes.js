@@ -12,14 +12,14 @@ const router = express.Router();
 
 router.get("/count-word", authenticateJWT, countWords);
 
-router.get("/count-character/:userId/:fileId", authenticateJWT, countCharacters);
+router.get("/count-character", authenticateJWT, countCharacters);
 
-router.get("/count-sentence/:userId/:fileId", authenticateJWT, countSentences);
+router.get("/count-sentence", authenticateJWT, countSentences);
 
-router.get("/count-paragraph/:userId/:fileId", authenticateJWT, countParagraph);
+router.get("/count-paragraph", authenticateJWT, countParagraph);
 
 router.get(
-  "/count-longest/:fileId",
+  "/count-longest",
   authenticateJWT,
   countLargestWordsInParagraphs
 );
